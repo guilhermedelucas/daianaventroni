@@ -11,13 +11,22 @@ a {
     color: white;
 }
 
+body {
+    max-width: 1280px;
+    margin: auto;
+}
+
 .fixed{
     position: fixed;
     display: flex;
     width: 100%;
     top:-20px;
     left:0;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+#logo {
+    height: 250px;
 }
 
 .header_logo {
@@ -34,7 +43,7 @@ a {
 
 #container {
     height: 800px;
-    background-image: url("../images/projeto.jpg");
+    background-image: url("../images/main.jpg");
     background-position: center;
     background-size: cover;
     padding-left: 30%;
@@ -51,12 +60,14 @@ a {
     text-align: right;
     margin-top: 450px;
     font-size: 3em;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 #container_info h2 {
     width: 90%;
     text-align: right;
     font-size: 2em;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .nav_menu {
@@ -109,6 +120,13 @@ a {
 
 .box_info p {
     font-size: 1.3em;
+}
+
+.box_info a{
+    font-size: 1em;
+    text-decoration: none;
+    color: rgb(31, 101, 106);
+
 }
 
 .box_info_img {
@@ -196,11 +214,17 @@ a {
     padding-top: 20px;
     padding-left: 20px;
     width: auto;
+    max-height: 300px;
+    transition: all 1s;
+}
+
+.revit_img:hover {
+    max-height: 600px;
+    justify-content: center;
 }
 
 .footer {
     text-align: left;
-
     display: flex;
     justify-content: center;
     background-color: rgb(43, 43, 43);
@@ -210,14 +234,13 @@ a {
 
 #footer_texts {
     text-align: left;
-
     color: rgb(151, 152, 151);
     margin-bottom: 30px;
+    margin-left: 30px;
 }
 
 #footer_texts a{
     text-align: left;
-
     font-size: 1em;
     line-height: 35px;
     color: white;
@@ -225,8 +248,7 @@ a {
 
 #footer_texts p{
     text-align: left;
-
-    font-size: 1.2em;
+    font-size: 1.1em;
     line-height: 35px;
     color: rgb(151, 152, 151);
 
@@ -247,7 +269,7 @@ a {
 
 #map {
    height: 400px;
-   width: 900px;
+   width: 800px;
    margin:30px;
   }
 
@@ -357,4 +379,208 @@ a {
     height: 5px;
     background-color:white;
     margin: 20px 0;
+}
+
+@media screen and (max-width:800px) {
+    body {
+        width: 100%;
+    }
+
+    #logo {
+        height: 70px;
+    }
+
+    .header_logo {
+        text-align: center;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .logo_text {
+        margin: auto;
+        font-size: 1.3em;
+    }
+
+    .nav_menu {
+        display: flex;
+        flex-direction: column;
+        margin: 5px;
+        padding: 5px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .nav_menu p {
+        color: rgb(31, 101, 106);
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    #container {
+        height: 200px;
+        padding-left: 10px;
+    }
+
+    #container_info {
+        text-align: right;
+        padding: 40px 10px 10px 10px;
+        color: white;
+    }
+
+    #container_info h1 {
+        margin-top: 25px;
+        font-size: 1.2em;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    #container_info h2 {
+        font-size: 1.1em;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    .text_section {
+        font-size: 1.3em;
+        padding: 5px;
+    }
+
+    .under_container {
+        margin: 0;
+    }
+
+    .under_container h2 {
+        font-size: 1.1em;
+
+    }
+
+    .more_info {
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .box_info {
+        text-align: center;
+        flex-basis: 15%;
+        padding: 20px 10px 20px 10px;
+        border-bottom: 1px solid rgb(31, 101, 106);
+        border-right: 0px;
+    }
+
+    .box_info:last-child {
+        border-right: none;
+    }
+
+    .box_info_img {
+        height: 50px;
+        padding: 5px;
+    }
+
+    .box_info p {
+        font-size: 1em;
+    }
+
+    .revit_does {
+        font-size: 2em;
+        padding: 5px;
+    }
+
+    .question {
+        flex-direction: column;
+    }
+
+    .text_revit {
+        padding: 0px;
+        width: 100%;
+    }
+
+    .text_revit p {
+        padding: 0;
+    }
+
+    .about_revit{
+        padding: 10px;
+    }
+
+    .about_revit h1{
+        font-size: 1.2em;
+        padding: 0px;
+    }
+
+    .about_revit p{
+        font-size: 1em;
+    }
+
+    #revit_imgs_box {
+        flex-direction: column;
+    }
+
+    .revit_img {
+        padding: 0px;
+        max-height: none;
+        max-width: 100vw;
+    }
+
+    .text_selection_reais{
+        font-size: 2em;
+    }
+
+    .instruction_text {
+        font-size: 1em;
+        padding: 5px;
+        margin: 0;
+    }
+
+    .text_selection_body_down{
+        font-size: .8em;
+        line-height: 8px;
+    }
+
+    #number_high_box {
+        height: 70px;
+        width: 70px;
+    }
+
+    .number_high {
+        font-size: 2em;
+    }
+
+    .text_selection_body {
+        font-size: 0.9em;
+    }
+
+    .text_white{
+        font-size: 1em;
+    }
+
+    #price{
+        padding: 10px 0;
+    }
+
+    #footer_texts{
+        margin: 10px;
+
+    }
+
+    #footer_texts p{
+        font-size: .9em;
+    }
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+
+    }
+
+    #map {
+        width: 90%;
+        align-items: center;
+        margin: 5px 5px 15px 5px;
+    }
+
+    #signature p{
+        font-size: .8em;
+    }
 }

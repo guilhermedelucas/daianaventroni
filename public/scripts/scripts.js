@@ -1,8 +1,9 @@
 $(function() {
+	if(window.innerWidth > 800){
 	$('.nav_menu a').bind('click',function(event){
 		var $anchor = $(this);
 		$('html, body').stop().animate({
-			scrollTop: $($anchor.attr('href')).offset().top -10
+			scrollTop: $($anchor.attr('href')).offset().top -55
 		}, 1500,'easeInOutExpo');
 		event.preventDefault();
 	});
@@ -14,4 +15,5 @@ $(function() {
         	$('.nav_menu').removeClass('fixed');
     	}
 	});
+	}
 });
