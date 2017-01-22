@@ -1,95 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ventrone Arquitetura</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
+
 <body>
-    <div class="header_logo" id="home">
-        <img src="/images/logo.jpg" id="logo">
-        <p class="logo_text">VENTRONE ARQUITETURA</p> <!-- take out later -->
+    <div id="modal">
+        <div id="modal_frame"></div>
     </div>
-
-    <div class="nav_menu">
-            <a href="#home"><p> HOME </p></a>
-            <a href="#about"><p> SOBRE O CURSO </p></a>
-            <a href="#revit"><p> REVIT </p></a>
-            <a href="#matricula"><p> MATRÍCULA </p></a>
-            <a href="#contato"><p> CONTATO </p></a>
-    </div>
-
-    <div id="container">
-        <div id="container_info">
-            <h1>Aprenda a criar e gerenciar projetos em Revit</h1>
-            <h2>Software mais moderno para projetos arquitetônicos e engenharia civil</h2>
+    <div id="container_body">
+        <div class="header_logo" id="home">
+            <img src="/images/logo.jpg" id="logo">
+            <p class="logo_text">VENTRONE ARQUITETURA</p>
+            <!-- take out later -->
         </div>
-    </div>
 
-    <div class="under_container" id="about">
-        <h1 class="text_section"><span class="text_white">Curso de Revit Architecture + Projeto de Prefeitura</span></h1>
-        <h2>Turma aberta para janeiro de 2017</h2>
-    </div>
-
-    <div class="more_info">
-        <div class="box_info">
-            <img src="/images/icons/Calendar-104.png" height="75px" class="box_info_img">
-            <p>Início da aulas dia 07 de Janeiro</p>
+        <div class="nav_menu">
+            <a href="#home">
+                <p> HOME </p>
+            </a>
+            <a href="#about">
+                <p> SOBRE O CURSO </p>
+            </a>
+            <a href="#revit">
+                <p> REVIT </p>
+            </a>
+            <a href="#proximos">
+                <p> PRÓXIMOS CURSOS </p>
+            </a>
+            <a href="#contato">
+                <p> CONTATO </p>
+            </a>
         </div>
-        <div class="box_info">
-            <img src="/images/icons/Clock-100.png" height="75px" class="box_info_img">
-            <p>Aulas aos sábados das 13h30 ás 17h00</p>
-        </div>
-        <div class="box_info">
-            <img src="/images/icons/Module-100.png" height="75px" class="box_info_img">
-            <p>Módulo básico com duração de 21 horas</p>
-        </div>
-        <div class="box_info">
-            <img src="/images/icons/Classroom-100.png" height="75px" class="box_info_img">
-            <p>Salas amplamente equipadas</p>
-        </div>
-        <div class="box_info">
-            <img src="/images/icons/Diploma-100.png" height="75px" class="box_info_img">
-            <p>Curso com certificado reconhecido pela <a href="http://www.abed.org.br/"><b>ABED</b></a></p>
-        </div>
-    </div>
-
-<div class="bars"></div>
-    <div class="question" id="revit">
-        <img src="/images/icons/AskQuestion-100.png" class="box_info_img">
-        <div class="text_question">
-            <p class="revit_does"> O QUE <br> O REVIT <br> FAZ? </P>
-        </div>
-        <img src="/images/icons/AskQuestion-100.png" class="box_info_img">
-    </div>
-<div class="bars"></div>
 
 
 
-    <div class="about_revit">
-        <div class="text_revit">
-            <div class="text_revit2">
-                <h1> REVIT ARCHITECTURE </h1>
-                <p>O Revit é um software de tecnologia BIM (Building Information Modeling ou Modelagem de Informação da Construção) é uma das novidades mais promissoras dentro do mercado de Arquitetura, Engenharia e Construção. Este conceito envolve o gerenciamento de informações dentro de um edifício, desde a fase inicial de projeto, criando um modelo digital que abrange todo o ciclo de vida da edificação.<br>
-                Dentro de um projeto em Revit qualquer alteração nos componentes de projeto gera automaticamente a alteração dos documentos 2D (plantas, cortes, elevações), criando desenhos consistentes e completos.<br>
-                O curso apresenta a interface, os conceitos de tecnologia BIM  e ensina a projetar diretamente no software, em 3D, criando paredes, portas, janelas, estrutura, telhado e demais dados. Aprenda a utilizar o sistema de famílias do Revit, fundamental para que se realize um projeto paramétrico de forma simples, veja como fazer a documentação em 2D, gerando plantas, cortes e fachadas, utilizando cotas, criando tabelas e organizando a prancha de plotagem.</p>
+        <div id="container">
+            <div id="container_info">
+                <h1>Aprenda a criar e gerenciar projetos em Revit</h1>
+                <h2>Software mais moderno para projetos arquitetônicos e engenharia civil</h2>
             </div>
         </div>
-        <div id="revit_imgs_box">
-            <img src="/images/revit00.jpg" class="revit_img">
-            <img src="/images/revit01.jpg" class="revit_img">
-            <img src="/images/revit02.jpg" class="revit_img">
-            <img src="/images/revit03.jpg" class="revit_img">
+
+        <div class="under_container" id="about">
+            <h1 class="text_section"><span class="text_white">Curso de Revit Architecture + Projeto de Prefeitura</span></h1>
         </div>
-    </div>
-    <div class="bars"></div>
+
+        <div class="more_info">
+            <div class="box_info">
+                <img src="/images/icons/Calendar-104.png" height="75px" class="box_info_img">
+                <p>Várias datas disponíveis</p>
+            </div>
+            <div class="box_info">
+                <img src="/images/icons/Clock-100.png" height="75px" class="box_info_img">
+                <p>Aulas aos sábados das 13h30 ás 17h00</p>
+            </div>
+            <div class="box_info">
+                <img src="/images/icons/Module-100.png" height="75px" class="box_info_img">
+                <p>Módulo básico com duração de 21 horas</p>
+            </div>
+            <div class="box_info">
+                <img src="/images/icons/Classroom-100.png" height="75px" class="box_info_img">
+                <p>Salas amplamente equipadas</p>
+            </div>
+            <div class="box_info">
+                <img src="/images/icons/Diploma-100.png" height="75px" class="box_info_img">
+                <p>Curso com certificado reconhecido pela <a href="http://www.abed.org.br/"><b>ABED</b></a></p>
+            </div>
+        </div>
+
+        <div class="about_revit">
+            <div class="text_revit">
+                <h1>PRÓXIMOS CURSOS</h1>
+            </div>
+
+            <div class="matricula" id="proximos" ng-app="myApp" ng-controller="cursosController">
+                <div class="boxes_next" ng-repeat="cursos in cursos">
+                    <div>
+                        <h1> {{cursos.title}} </h1>
+                        <div class="frame_img_proximos">
+                            <img src="{{cursos.imgurl}}" class="img_box_proximos">
+                        </div>
+                        <h2> <strong>R$ {{cursos.price}} </strong></h2>
+                        <h3> {{cursos.description}} </h3>
+                        <h3> Início: {{cursos.date}} </h3>
+                        <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+                            <input type="hidden" name="code" value="{{cursos.pagamento}}" />
+                            <input type="hidden" name="iot" value="button" />
+                            <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-roxo-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+                        </form>
+                    </div>
+                </div>
+                <h2 class="white">Faça o pagamento e envie o comprovante para <a href="mailto:ventronearquitetura@hotmail.com" class="white"/>ventronearquitetura@hotmail.com</a> e assim que confirmamos o pagamento enviaremos a confirmação da matrícula</h2>
+            </div>
+        </div>
+
+        <div class="question" id="revit">
+            <img src="/images/icons/AskQuestion-100.png" class="box_info_img">
+            <div class="text_question">
+                <p class="revit_does"> O QUE <br> O REVIT <br> FAZ? </P>
+            </div>
+            <img src="/images/icons/AskQuestion-100.png" class="box_info_img">
+        </div>
+
+        </br>
+        <div class="about_revit">
+            <div class="text_revit">
+                <div class="text_revit2">
+                    <h1> REVIT ARCHITECTURE </h1>
+                    <p>O Revit é um software de tecnologia BIM (Building Information Modeling ou Modelagem de Informação da Construção) é uma das novidades mais promissoras dentro do mercado de Arquitetura, Engenharia e Construção. Este conceito envolve
+                        o gerenciamento de informações dentro de um edifício, desde a fase inicial de projeto, criando um modelo digital que abrange todo o ciclo de vida da edificação.<br> Dentro de um projeto em Revit qualquer alteração nos componentes
+                        de projeto gera automaticamente a alteração dos documentos 2D (plantas, cortes, elevações), criando desenhos consistentes e completos.<br> O curso apresenta a interface, os conceitos de tecnologia BIM  e ensina a projetar diretamente
+                        no software, em 3D, criando paredes, portas, janelas, estrutura, telhado e demais dados. Aprenda a utilizar o sistema de famílias do Revit, fundamental para que se realize um projeto paramétrico de forma simples, veja como fazer
+                        a documentação em 2D, gerando plantas, cortes e fachadas, utilizando cotas, criando tabelas e organizando a prancha de plotagem.</p>
+                </div>
+            </div>
+
+            <div id="revit_imgs_box">
+                <img src="/images/revit00.jpg" class="revit_img" id="img_modal0">
+                <img src="/images/revit01.jpg" class="revit_img" id="img_modal1">
+                <img src="/images/revit02.jpg" class="revit_img" id="img_modal2">
+                <img src="/images/revit03.jpg" class="revit_img" id="img_modal3">
+            </div>
+        </div>
+        </br>
 
 
 
-<div class="matricula" id="matricula">
-    <h1 class="text_section"><span class="text_white"> INSCRIVA-SE, VAGAS LIMITADAS </span></h1>
+
+
+        <!-- <h1 class="text_section"><span class="text_white"> INSCRIVA-SE, VAGAS LIMITADAS </span></h1>
 
     <div id="price">
         <div class="price_total">
@@ -104,10 +150,10 @@
         </div>
     </div>
 
-    <div class="bars_white"></div>
+    <div class="bars_white"></div> -->
 
 
-    <div class="subscribe">
+        <!-- <div class="subscribe">
         <div class="subscibe_box">
             <h1 class="text_section"><span class="text_white"> PASSO A PASSO </span></h1>
             <div class="intruction_box">
@@ -123,40 +169,44 @@
             </div>
         <div>
             <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+
                 <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
-                <input type="hidden" name="code" value="706C955BFCFC58ECC48B6FB23D045822" />
+        <!-- <input type="hidden" name="code" value="706C955BFCFC58ECC48B6FB23D045822" />
                 <input type="hidden" name="iot" value="button" />
                 <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-roxo-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
             </form>
         </div>
-    </div>
+    </div> -->
 
-</div>
-</div>
+        <!-- </div> -->
 
-    <div class="footer" id="contato">
-        <div id="footer_texts">
-            <p>Contato: <span class="text_white">(14) 99710-1193</span></br>
-                E-mail: <span class="text_white"><a href="mailto:ventronearquitetura@hotmail.com">ventronearquitetura@hotmail.com</a></span></br>
-                <span class="text_white">Colégio Avançar</span></br>
-                Endereço: <span class="text_white">Av. República, n°423 </span></br>
-                <span class="text_white">Marília-SP</span></p>
+        </br>
+        <div class="footer" id="contato">
+            <div id="footer_texts">
+                <p>Contato: <span class="text_white">(14) 99710-1193</span></br>
+                    E-mail: <span class="text_white"><a href="mailto:ventronearquitetura@hotmail.com">ventronearquitetura@hotmail.com</a></span></br>
+                    <span class="text_white">Colégio Avançar</span></br>
+                    Endereço: <span class="text_white">Av. República, n°423 </span></br>
+                    <span class="text_white">Marília-SP</span></p>
+            </div>
+            <div id="map"></div>
         </div>
-        <div id="map"></div>
-    </div>
 
 
-    <div id="signature">
-        <p> <a href="http://github.com/guilhermedelucas" class="icon_footer">Designed and coded by Guilherme Gomes de Lucas |</a>
-        <a href="https://icons8.com/web-app/22/Calendar" class="icon_footer">Icons by Icons8</a> </p>
+        <div id="signature">
+            <p> <a href="http://github.com/guilhermedelucas" class="icon_footer">Designed and coded by Guilherme Gomes de Lucas |</a>
+                <a href="https://icons8.com/web-app/22/Calendar" class="icon_footer">Icons by Icons8</a> </p>
+        </div>
+
     </div>
 
 
 </body>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 <script type="text/javascript" src="/scripts/jquery.easing.1.3.js"></script>
-<script type="text/javascript"src="/scripts/maps.js"></script>
-<script type="text/javascript"src="/scripts/scripts.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZl2GNLs-1fZEe7jOvsiA4Umi1smZoUGA&callback=initMap"
-  async defer></script>
+<script tupe="text/javascript" src="/scripts/cursos.js"></script>
+<script type="text/javascript" src="/scripts/maps.js"></script>
+<script type="text/javascript" src="/scripts/scripts.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZl2GNLs-1fZEe7jOvsiA4Umi1smZoUGA&callback=initMap" async defer></script>
+
 </html>

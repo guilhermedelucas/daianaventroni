@@ -1,31 +1,15 @@
 -- psql d6utp3cpqe114p -h ec2-107-20-195-181.compute-1.amazonaws.com -U xnzvxarflygeqw -W (to connect to heroku database)
+-- database name daianaventoni
 
 DROP TABLE IF EXISTS signatures;
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS users_profiles;
 
-CREATE TABLE signatures (
+CREATE TABLE cursos (
     id SERIAL primary key,
-    signature TEXT,
-    user_id INTEGER not null,
-    timestamp TIMESTAMP default current_timestamp
-);
-
-CREATE TABLE users (
-    id SERIAL primary key,
-    firstname VARCHAR(255) not null,
-    lastname VARCHAR(255) not null,
-    email TEXT not null unique,
-    password VARCHAR(255),
-    timestamp TIMESTAMP default current_timestamp
-);
-
-CREATE TABLE users_profiles (
-    id SERIAL primary key,
-    age INTEGER,
-    city VARCHAR(255),
-    country VARCHAR(255),
-    website VARCHAR(255),
-    user_id INTEGER not null,
+    title VARCHAR(255),
+    description TEXT,
+    imgUrl TEXT,
+    price VARCHAR(255),
+    date VARCHAR(255),
+    pagamento VARCHAR(255),
     timestamp TIMESTAMP default current_timestamp
 );
