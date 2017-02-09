@@ -1,4 +1,8 @@
 (function() {
+    // initi revit container hide
+    $('#container_revit').hide();
+
+
     console.log("hello");
     if (window.innerWidth > 800) {
         $('.nav_menu a').bind('click', function(event) {
@@ -40,5 +44,40 @@
 		})
 
 		}
+
+
+        function toggleMenu() {
+            setInterval(()=>{
+                    $('#container_sketch').slideToggle(400, "linear");
+                    $('#container_revit').slideToggle(400, "linear");
+                }, 5000);
+                // toggleMenu();
+        }
+        toggleMenu()
+
+        // setTimeout(()=>{
+        // $('#toggleRevit').on('click', function (){
+        //     $('#container_sketch').slideToggle(400, "linear");
+        //     $('#container_revit').slideToggle(400, "linear");
+        // })}, 3000);
+        // setTimeout(()=> {
+        // $('#toggleSketchup').on('click', function (){
+        //     $('#container_revit').slideToggle(400, "linear");
+        //     $('#container_sketch').slideToggle(400, "linear");
+        // }), 6000})
+        // toggleMenu();
+        // }
+
+        $('#about-sketch').on('click', function (){
+            $('.about-container').removeClass('translateOut');
+            $('.about-container').addClass('translateIn');
+        })
+
+        $('#about-revit').on('click', function (){
+            $('.about-container').removeClass('translateIn');
+
+            $('.about-container').addClass('translateOut');
+        })
+
 
 })();

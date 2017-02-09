@@ -1,3 +1,4 @@
+var basicAuth = require('basic-auth');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var express = require('express');
@@ -18,7 +19,6 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.use(express.static('public'));
 
 app.use(function(req, res, next) {
     console.log(req.url);
@@ -28,8 +28,20 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get("/admin", function(req, res) {
-    res.pipe("./public/admin.html");
+var auth = function(req, res, next) {
+    var creds = basicAuth(req);
+    if (!creds || creds.name != 'daianaventrone' || creds.pass != 'dai537admin') {
+        res.setHeader('WWW-Authenticate', 'Basic realm=www');
+        res.sendStatus(401);
+    } else {
+        next();
+    }
+};
+
+// app.use(auth);
+
+app.get('/admin', auth, function(req, res) {
+    res.sendFile(__dirname + "/public/admin/index.html")
 });
 
 app.post('/delete', function(req, res){
@@ -91,6 +103,8 @@ app.post('/update', function(req, res){
         })
     })
 })
+
+app.use(express.static('public'));
 
 
 app.listen(process.env.PORT || 8080, function() {

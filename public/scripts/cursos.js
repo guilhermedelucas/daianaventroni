@@ -36,6 +36,8 @@
     // });
 
     myApp.controller('adminController', function($scope, $http, $rootScope) {
+        console.log(document);
+        console.log(document.referrer);
 
         $scope.addButton = true;
         $scope.updateButton = false;
@@ -124,7 +126,7 @@
                         $scope.price = "";
                         $scope.description = "";
                         $scope.date = "";
-                        $scope.pagamento = "";   
+                        $scope.pagamento = "";
                     })
                 } else {
                     alert("Houve algum erro, tente novamente. Caso o erro persista contato o desenvolvedor");

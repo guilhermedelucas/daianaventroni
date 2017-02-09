@@ -26,10 +26,7 @@
                 <p> HOME </p>
             </a>
             <a href="#about">
-                <p> SOBRE O CURSO </p>
-            </a>
-            <a href="#revit">
-                <p> REVIT </p>
+                <p> SOBRE OS CURSOS </p>
             </a>
             <a href="#proximos">
                 <p> PRÓXIMOS CURSOS </p>
@@ -40,30 +37,34 @@
         </div>
 
 
-
-        <div id="container">
-            <div id="container_info">
-                <h1>Aprenda a criar e gerenciar projetos em Revit</h1>
-                <h2>Software mais moderno para projetos arquitetônicos e engenharia civil</h2>
+            <div id="container_sketch">
+                <button id='toggleRevit'>Sketchup</button>​
+                <h1 class="container_title">NOVO CURSO DE SKETCHUP + VRAY</h1>
+                <h2 class="container_text">Aprenda a projetar e fazer renders reais</h2>
             </div>
-        </div>
+            <div id='container_revit'>
+                <button id='toggleSketchup'>Revit</button>​
+                <h1 class="container_title">REVIT 2017 + PROJETO PREFEITURA</h1>
+                <h2 class="container_text">Software mais moderno para projetos arquitetônicos e engenharia civil</h2>
+            </div>
+
 
         <div class="under_container" id="about">
-            <h1 class="text_section"><span class="text_white">Curso de Revit Architecture + Projeto de Prefeitura</span></h1>
+            <h1 class="text_section"><span class="text_white"></span></h1>
         </div>
 
         <div class="more_info">
             <div class="box_info">
                 <img src="/images/icons/Calendar-104.png" height="75px" class="box_info_img">
-                <p>Várias datas disponíveis</p>
+                <p>Novas turmas com início em março</p>
             </div>
             <div class="box_info">
                 <img src="/images/icons/Clock-100.png" height="75px" class="box_info_img">
-                <p>Aulas aos sábados das 13h30 ás 17h00</p>
+                <p>Turmas aos sábados das 13h30 ás 17h00</p>
             </div>
             <div class="box_info">
                 <img src="/images/icons/Module-100.png" height="75px" class="box_info_img">
-                <p>Módulo básico com duração de 21 horas</p>
+                <p>Revit módulo básico com duração de 21 horas</p>
             </div>
             <div class="box_info">
                 <img src="/images/icons/Classroom-100.png" height="75px" class="box_info_img">
@@ -87,9 +88,9 @@
                         <div class="frame_img_proximos">
                             <img src="{{cursos.imgurl}}" class="img_box_proximos">
                         </div>
-                        <h2> <strong>R$ {{cursos.price}} </strong></h2>
-                        <h3> {{cursos.description}} </h3>
-                        <h3> Início: {{cursos.date}} </h3>
+                        <h2 class="about-text center"> <strong>R$ {{cursos.price}} </strong></h2>
+                        <h3 class="about-text center"> {{cursos.description}} </h3>
+                        <h3 class="about-text center"> Início: {{cursos.date}} </h3>
                         <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
                             <input type="hidden" name="code" value="{{cursos.pagamento}}" />
                             <input type="hidden" name="iot" value="button" />
@@ -97,41 +98,58 @@
                         </form>
                     </div>
                 </div>
-                <h2 class="white">Faça o pagamento e envie o comprovante para <a href="mailto:ventronearquitetura@hotmail.com" class="white"/>ventronearquitetura@hotmail.com</a> e assim que confirmamos o pagamento enviaremos a confirmação da matrícula</h2>
+                <h3 class="white about-text" style="width: 80%">Faça o pagamento e envie o comprovante para <a href="mailto:ventronearquitetura@hotmail.com" class="white" style="font-size: 1em"/>ventronearquitetura@hotmail.com</a> e assim que confirmamos o pagamento enviaremos a confirmação da matrícula</h3>
             </div>
         </div>
 
-        <div class="question" id="revit">
+        <!-- <div class="question" id="revit">
             <img src="/images/icons/AskQuestion-100.png" class="box_info_img">
             <div class="text_question">
                 <p class="revit_does"> O QUE <br> O REVIT <br> FAZ? </P>
             </div>
             <img src="/images/icons/AskQuestion-100.png" class="box_info_img">
-        </div>
+        </div> -->
 
-        </br>
-        <div class="about_revit">
-            <div class="text_revit">
-                <div class="text_revit2">
-                    <h1> REVIT ARCHITECTURE </h1>
-                    <p>O Revit é um software de tecnologia BIM (Building Information Modeling ou Modelagem de Informação da Construção) é uma das novidades mais promissoras dentro do mercado de Arquitetura, Engenharia e Construção. Este conceito envolve
-                        o gerenciamento de informações dentro de um edifício, desde a fase inicial de projeto, criando um modelo digital que abrange todo o ciclo de vida da edificação.<br> Dentro de um projeto em Revit qualquer alteração nos componentes
-                        de projeto gera automaticamente a alteração dos documentos 2D (plantas, cortes, elevações), criando desenhos consistentes e completos.<br> O curso apresenta a interface, os conceitos de tecnologia BIM  e ensina a projetar diretamente
-                        no software, em 3D, criando paredes, portas, janelas, estrutura, telhado e demais dados. Aprenda a utilizar o sistema de famílias do Revit, fundamental para que se realize um projeto paramétrico de forma simples, veja como fazer
-                        a documentação em 2D, gerando plantas, cortes e fachadas, utilizando cotas, criando tabelas e organizando a prancha de plotagem.</p>
+        <button id="about-revit" class="button-info">Revit</button>
+        <button id="about-sketch" class="button-info">SketchUp</button>
+
+
+
+        <div class="about-cursos">
+            <div class="about-container" class="about-revit">
+                <div class="about_picture">
+                    <img src="./images/revit-screen.png" class="about-img">
+                </div>
+                <div class="about-text">
+                    <h1 class="about-title"> REVIT ARCHITECTURE </h1>
+                    <p class="about-text">O Revit é um software de tecnologia BIM (Building Information Modeling ou Modelagem de Informação da Construção) é uma das novidades mais promissoras dentro do mercado de Arquitetura, Engenharia e Construção. <br> Dentro de um projeto em Revit qualquer alteração nos componentes de projeto gera automaticamente a alteração dos documentos 2D (plantas, cortes, elevações), criando desenhos consistentes e completos.<br> O curso apresenta a interface, os conceitos de tecnologia BIM  e ensina a projetar diretamente no software, em 3D, criando paredes, portas, janelas, estrutura, telhado e demais dados.</p>
                 </div>
             </div>
-
-            <div id="revit_imgs_box">
-                <img src="/images/revit00.jpg" class="revit_img" id="img_modal0">
-                <img src="/images/revit01.jpg" class="revit_img" id="img_modal1">
-                <img src="/images/revit02.jpg" class="revit_img" id="img_modal2">
-                <img src="/images/revit03.jpg" class="revit_img" id="img_modal3">
+            <div class="about-container" class="about-sketch">
+                <div class="about_picture">
+                    <img src="./images/vray-screen.jpg" class="about-img">
+                </div>
+                <div  class="about-text">
+                    <h1 class="about-title"> SketchUp e V-ray </h1>
+                    <p class="about-text">O Revit é um software de tecnologia BIM (Building Information Modeling ou Modelagem de Informação da Construção) é uma das novidades mais promissoras dentro do mercado de Arquitetura, Engenharia e Construção. <br> Dentro de um projeto em Revit qualquer alteração nos componentes de projeto gera automaticamente a alteração dos documentos 2D (plantas, cortes, elevações), criando desenhos consistentes e completos.<br> O curso apresenta a interface, os conceitos de tecnologia BIM  e ensina a projetar diretamente no software, em 3D, criando paredes, portas, janelas, estrutura, telhado e demais dados.</p>
+                </div>
             </div>
+        </div>
+
+
+
+
+
         </div>
         </br>
 
 
+        <!-- <div id="revit_imgs_box">
+        <img src="/images/revit00.jpg" class="revit_img" id="img_modal0">
+        <img src="/images/revit01.jpg" class="revit_img" id="img_modal1">
+        <img src="/images/revit02.jpg" class="revit_img" id="img_modal2">
+        <img src="/images/revit03.jpg" class="revit_img" id="img_modal3">
+    </div> -->
 
 
 
