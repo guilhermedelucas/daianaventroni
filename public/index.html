@@ -6,38 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ventrone Arquitetura</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+
 </head>
+<style>
+    #menu {
+        top: 0;
+        left: 0;
+        height: 30px;
+        width: 100%;
+        margin: 0;
+        z-index: 70;
+        position: fixed;
+        background-color: white;
+    }
 
+    ul, ol {
+        list-style: none;
+    }
+</style>
 <body>
-    <div id="modal">
-        <div id="modal_frame"></div>
-    </div>
-    <div id="container_body">
-        <div class="header_logo" id="home">
-            <img src="/images/logo.jpg" id="logo">
-            <p class="logo_text">VENTRONE ARQUITETURA</p>
-            <!-- take out later -->
+        <ul id="menu" class="nav_menu">
+            <li data-menu-anchor="home">
+                <a href="#home"><img src="/images/logo.jpg" id="logo" style="max-height: 30px"></a>
+            </li>
+            <li data-menu-anchor="revit" >
+                <a href="#revit"> Revit </a>
+            </li>
+            <li data-menu-anchor="sketchup" >
+                <a href="#sketchup"> Sketchup </a>
+            </li>
+            <li data-menu-anchor="autocad" >
+                <a href="#autocad"> Autocad </a>
+            </li>
+            <li data-menu-anchor="promob" >
+                <a href="#promob"> Promob </a>
+            </li>
+            <li data-menu-anchor="photoshop" >
+                <a href="#photoshop"> Photoshop </a>
+            </li>
+            <li data-menu-anchor="corel" >
+                <a href="#corel"> Corel </a>
+            </li>
+            <li data-menu-anchor="contato" >
+                <a href="#contato"> Contato </a>
+            </li>
+        </ul>
+
+
+        <div id="fullpage">
+	        <div class="section" data-anchor="home" style="background-color: gray; color: white">
+                <h1>Home</h1>
+                <img src="/images/logo.jpg" id="logo">
+                <p class="logo_text">VENTRONE ARQUITETURA</p>
+            </div>
+
+	        <div class="section" data-anchor="revit">Some section</div>
+	        <div class="section" data-anchor="sketchup">Some section</div>
+            <div class="section" data-anchor="autocad">Some section</div>
+	        <div class="section" data-anchor="promob">Some section</div>
+            <div class="section" data-anchor="photoshop">Some section</div>
+            <div class="section" data-anchor="corel">Some section</div>
+            <div class="section" data-anchor="contato" style="background-color: black; color: white; text-align: center">
+                <p>Contato: <span class="text_white">(14) 99710-1193</span></br>
+                    E-mail: <span class="text_white"><a href="mailto:ventronearquitetura@hotmail.com">ventronearquitetura@hotmail.com</a></span></br>
+                    <span class="text_white">Colégio Avançar</span></br>
+                    Endereço: <span class="text_white">Av. República, 468 </span></br>
+                    <span class="text_white">Marília-SP</span></p>
+                <div id="map"></div>
+                <div id="signature">
+                    <p> <a href="http://github.com/guilhermedelucas" class="icon_footer">Designed and coded by Guilherme Gomes de Lucas |</a>
+                        <a href="https://icons8.com/web-app/22/Calendar" class="icon_footer">Icons by Icons8</a> </p>
+                </div>
+            </div>
         </div>
 
-        <div class="nav_menu">
-            <a href="#home">
-                <p> HOME </p>
-            </a>
-            <a href="#about">
-                <p> SOBRE OS CURSOS </p>
-            </a>
-            <a href="#proximos">
-                <p> PRÓXIMOS CURSOS </p>
-            </a>
-            <a href="#contato">
-                <p> CONTATO </p>
-            </a>
-        </div>
 
 
-            <div id="container_sketch">
+
+            <!-- <div id="container_sketch">
                 <button id='toggleRevit'>Sketchup</button>​
                 <h1 class="container_title">NOVO CURSO DE SKETCHUP + VRAY</h1>
                 <h2 class="container_text">Aprenda a projetar e fazer renders reais</h2>
@@ -100,7 +149,7 @@
                 </div>
                 <h3 class="white about-text" style="width: 80%">Faça o pagamento e envie o comprovante para <a href="mailto:ventronearquitetura@hotmail.com" class="white" style="font-size: 1em"/>ventronearquitetura@hotmail.com</a> e assim que confirmamos o pagamento enviaremos a confirmação da matrícula</h3>
             </div>
-        </div>
+        </div> -->
 
         <!-- <div class="question" id="revit">
             <img src="/images/icons/AskQuestion-100.png" class="box_info_img">
@@ -110,7 +159,7 @@
             <img src="/images/icons/AskQuestion-100.png" class="box_info_img">
         </div> -->
 
-        <button id="about-revit" class="button-info">Revit</button>
+        <!-- <button id="about-revit" class="button-info">Revit</button>
         <button id="about-sketch" class="button-info">SketchUp</button>
 
 
@@ -141,7 +190,7 @@
 
 
         </div>
-        </br>
+        </br> -->
 
 
         <!-- <div id="revit_imgs_box">
@@ -198,25 +247,6 @@
 
         <!-- </div> -->
 
-        </br>
-        <div class="footer" id="contato">
-            <div id="footer_texts">
-                <p>Contato: <span class="text_white">(14) 99710-1193</span></br>
-                    E-mail: <span class="text_white"><a href="mailto:ventronearquitetura@hotmail.com">ventronearquitetura@hotmail.com</a></span></br>
-                    <span class="text_white">Colégio Avançar</span></br>
-                    Endereço: <span class="text_white">Av. República, n°423 </span></br>
-                    <span class="text_white">Marília-SP</span></p>
-            </div>
-            <div id="map"></div>
-        </div>
-
-
-        <div id="signature">
-            <p> <a href="http://github.com/guilhermedelucas" class="icon_footer">Designed and coded by Guilherme Gomes de Lucas |</a>
-                <a href="https://icons8.com/web-app/22/Calendar" class="icon_footer">Icons by Icons8</a> </p>
-        </div>
-
-    </div>
 
 
 </body>
@@ -225,6 +255,7 @@
 <script tupe="text/javascript" src="/scripts/cursos.js"></script>
 <script type="text/javascript" src="/scripts/maps.js"></script>
 <script type="text/javascript" src="/scripts/scripts.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZl2GNLs-1fZEe7jOvsiA4Umi1smZoUGA&callback=initMap" async defer></script>
 
 </html>
