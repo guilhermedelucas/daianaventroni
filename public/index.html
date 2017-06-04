@@ -5,32 +5,184 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="./images/logos/ventrone-logo.png">
+
     <title>Ventrone Arquitetura</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.css"/>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans:300" rel="stylesheet">
 </head>
 <style>
-    #menu {
-        top: 0;
-        left: 0;
-        height: 30px;
+    h1 {
+        font-size: 6em;
+        font-family: 'Fjalla One', sans-serif;
+    }
+
+    h2 {
+        padding: 0px;
+    }
+
+    .clearfix {
         width: 100%;
-        margin: 0;
+        font-size: 11pt;
+        position: absolute;
+        transition: 0.4s;
+        color: rgb(54, 52, 53);
+        z-index: 1000;
+        border-bottom: 1px solid rgb(31, 101, 106);
+    }
+
+    .clearfix a {
+        color: rgb(54, 54, 54);
+        font-size: .9em;
+        font-weight: bold;
+    }
+
+    #nav-desktop {
+        border-bottom: 1px solid black;
+    }
+
+    #nav-desktop ul {
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    #nav-desktop li {
+        display: inline;
+        padding: 20px 50px 10px 50px;
+    }
+
+    .btn-open {
+        transform: rotate(90deg);
+    }
+
+    .btn-close {
+        transform: rotate(0deg);
+    }
+
+
+    .intro {
+        width: 75%;
+        margin: auto;
+    }
+
+    .intro h2, a {
+        font-size: 1.5em;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.70);
+        width: 100%;
+        margin: auto;
+    }
+
+    .matriculas {
+        font-size: 2em;
+    }
+
+    #menu {
+        width: 100%;
+        left: 0;
+        top: 55px;
         z-index: 70;
+        height: 41%;
         position: fixed;
         background-color: white;
+    }
+
+    .logo-menu {
+        padding: 15px 15px 7px 10px;
+        z-index: 1000;
+        position: relative;
+        height: 35px;
+    }
+
+    .menu-icon {
+        position: absolute;
+        left: 15px;
+    }
+    .logo-icon {
+        position: absolute;
+        right: 15px;
     }
 
     ul, ol {
         list-style: none;
     }
+
+    nav {
+      width: 100%;
+      background: #fff;
+      font-size: 11pt;
+      position: relative;
+      transition: 0.4s;
+      color: rgb(54, 52, 53);
+    }
+
+    nav li a:hover, nav a:active {
+        font-weight: bold;
+    }
+
+    nav ul {
+        padding: 0;
+        margin: 0 80px 0 0;
+        height: 50px;
+    }
+
+    nav li {
+      display: inline;
+    }
+
+    #signature {
+        position: absolute;
+        bottom: 0;
+        width: 100%
+    }
+
+    #signature a {
+        text-align: center;
+        font-size: .7em;
+
+    }
+
+    /*//arrows*/
+
+    .fp-controlArrow.fp-prev {
+        left: 15px;
+        border-width: 15px 15px 15px 0px;
+    }
+    .fp-controlArrow.fp-next {
+        right: 15px;
+        border-width: 15px 0 15px 15px;
+        border-color: transparent transparent transparent #fff;
+    }
+    /*//arrows*/
+    @media only screen and (max-device-width: 480px) {
+        h1 {
+            font-size: 2.5em;
+        }
+        .intro {
+            width: 85%;
+            margin: auto;
+        }
+        .intro h2 {
+            font-size: .8em;
+            font-family: 'Open Sans', sans-serif;
+            color: rgba(255, 255, 255, 0.70);
+            width: 85%;
+            margin: auto;
+        }
+        .matriculas {
+            font-size: 1.5em;
+        }
+
+	}
 </style>
 <body>
-        <ul id="menu" class="nav_menu">
+    <nav class="clearfix" id="nav-desktop">
+        <ul>
             <li data-menu-anchor="home">
-                <a href="#home"><img src="/images/logo.jpg" id="logo" style="max-height: 30px"></a>
+                <a href="#home"><img src="/images/logos/ventrone-logo.png" id="logo" style="max-height: 30px; margin-top: -10px"></a>
             </li>
             <li data-menu-anchor="revit" >
                 <a href="#revit"> Revit </a>
@@ -48,205 +200,267 @@
                 <a href="#photoshop"> Photoshop </a>
             </li>
             <li data-menu-anchor="corel" >
-                <a href="#corel"> Corel </a>
+                <a href="#corel"> Corel Draw </a>
             </li>
             <li data-menu-anchor="contato" >
                 <a href="#contato"> Contato </a>
             </li>
         </ul>
+    </nav>
+
+    <nav class="clearfix"  id="nav-mobile">
+        <div class="logo-menu">
+            <img src="../images/nav-icon.png" class="menu-icon btn-close" height="20px">
+            <li data-menu-anchor="home" class="logo-icon">
+                <a href="#home"><img src="/images/logos/ventrone-logo.png" id="logo" style="max-height: 30px"></a>
+            </li>
+        </div>
+    <ul id="menu" class="nav_menu clearfixlist">
+
+        <li data-menu-anchor="revit" >
+            <a href="#revit"> Revit </a>
+        </li>
+        <li data-menu-anchor="sketchup" >
+            <a href="#sketchup"> Sketchup </a>
+        </li>
+        <li data-menu-anchor="autocad" >
+            <a href="#autocad"> Autocad </a>
+        </li>
+        <li data-menu-anchor="promob" >
+            <a href="#promob"> Promob </a>
+        </li>
+        <li data-menu-anchor="photoshop" >
+            <a href="#photoshop"> Photoshop </a>
+        </li>
+        <li data-menu-anchor="corel" >
+            <a href="#corel"> Corel Draw  </a>
+        </li>
+        <li data-menu-anchor="contato" >
+            <a href="#contato"> Contato </a>
+        </li>
+    </ul>
+</nav>
 
 
         <div id="fullpage">
-	        <div class="section" data-anchor="home" style="background-color: gray; color: white">
-                <h1>Home</h1>
-                <img src="/images/logo.jpg" id="logo">
-                <p class="logo_text">VENTRONE ARQUITETURA</p>
+	        <div class="section" data-anchor="home" style="background-color: white; color: black">
+                <!-- <div class="slide"> -->
+
+                    <div class="intro">
+                        <img src="/images/logos/ventrone-logo.png" id="logo">
+                        <h1 style="color: black; padding: 0px; font-size: 3em;">VENTRONE ARQUITETURA</h1>
+                        <h2 style="font-weight: 400; color: black; font-size: 4em; font-family: 'Open Sans', sans-serif; padding: 0px; line-height: 0.9;">CURSOS</h2>
+                        <h2 style="color: black">Cursos para softwares de projeto para arquitetura, design de interiores e engenharia civil.</h2>
+
+                    </div>
+                <!-- </div>
+                <div class="slide"> Slide 2 </div>
+                <div class="slide"> Slide 3 </div>
+                <div class="slide"> Slide 4 </div> -->
             </div>
 
-	        <div class="section" data-anchor="revit">Some section</div>
-	        <div class="section" data-anchor="sketchup">Some section</div>
-            <div class="section" data-anchor="autocad">Some section</div>
-	        <div class="section" data-anchor="promob">Some section</div>
-            <div class="section" data-anchor="photoshop">Some section</div>
-            <div class="section" data-anchor="corel">Some section</div>
-            <div class="section" data-anchor="contato" style="background-color: black; color: white; text-align: center">
-                <p>Contato: <span class="text_white">(14) 99710-1193</span></br>
-                    E-mail: <span class="text_white"><a href="mailto:ventronearquitetura@hotmail.com">ventronearquitetura@hotmail.com</a></span></br>
-                    <span class="text_white">Colégio Avançar</span></br>
-                    Endereço: <span class="text_white">Av. República, 468 </span></br>
-                    <span class="text_white">Marília-SP</span></p>
-                <div id="map"></div>
-                <div id="signature">
-                    <p> <a href="http://github.com/guilhermedelucas" class="icon_footer">Designed and coded by Guilherme Gomes de Lucas |</a>
-                        <a href="https://icons8.com/web-app/22/Calendar" class="icon_footer">Icons by Icons8</a> </p>
+	        <div class="section" data-anchor="revit" style="background-color: #025291; color: white">
+                <div class="slide">
+                    <div class="intro">
+                        <h1>Revit</h1>
+                        <h2>O Revit é um software de tecnologia BIM (Building Information Modeling ou Modelagem de Informação da Construção) é uma das novidades mais promissoras dentro do mercado de Arquitetura, Engenharia e Construção. <br> Dentro de um projeto em Revit qualquer alteração nos componentes de projeto gera automaticamente a alteração dos documentos 2D (plantas, cortes, elevações), criando desenhos consistentes e completos.<br> O curso apresenta a interface, os conceitos de tecnologia BIM  e ensina a projetar diretamente no software, em 3D, criando paredes, portas, janelas, estrutura, telhado e demais dados.</h2>
+                    </br>
+                        <h2 class="matriculas" style="color: white;"><b>MATRÍCULAS ABERTAS</b></h2>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-
-
-
-            <!-- <div id="container_sketch">
-                <button id='toggleRevit'>Sketchup</button>​
-                <h1 class="container_title">NOVO CURSO DE SKETCHUP + VRAY</h1>
-                <h2 class="container_text">Aprenda a projetar e fazer renders reais</h2>
-            </div>
-            <div id='container_revit'>
-                <button id='toggleSketchup'>Revit</button>​
-                <h1 class="container_title">REVIT 2017 + PROJETO PREFEITURA</h1>
-                <h2 class="container_text">Software mais moderno para projetos arquitetônicos e engenharia civil</h2>
-            </div>
-
-
-        <div class="under_container" id="about">
-            <h1 class="text_section"><span class="text_white"></span></h1>
-        </div>
-
-        <div class="more_info">
-            <div class="box_info">
-                <img src="/images/icons/Calendar-104.png" height="75px" class="box_info_img">
-                <p>Novas turmas com início em março</p>
-            </div>
-            <div class="box_info">
-                <img src="/images/icons/Clock-100.png" height="75px" class="box_info_img">
-                <p>Turmas aos sábados das 13h30 ás 17h00</p>
-            </div>
-            <div class="box_info">
-                <img src="/images/icons/Module-100.png" height="75px" class="box_info_img">
-                <p>Revit módulo básico com duração de 21 horas</p>
-            </div>
-            <div class="box_info">
-                <img src="/images/icons/Classroom-100.png" height="75px" class="box_info_img">
-                <p>Salas amplamente equipadas</p>
-            </div>
-            <div class="box_info">
-                <img src="/images/icons/Diploma-100.png" height="75px" class="box_info_img">
-                <p>Curso com certificado reconhecido pela <a href="http://www.abed.org.br/"><b>ABED</b></a></p>
-            </div>
-        </div>
-
-        <div class="about_revit">
-            <div class="text_revit">
-                <h1>PRÓXIMOS CURSOS</h1>
-            </div>
-
-            <div class="matricula" id="proximos" ng-app="myApp" ng-controller="cursosController">
-                <div class="boxes_next" ng-repeat="cursos in cursos">
-                    <div>
-                        <h1> {{cursos.title}} </h1>
-                        <div class="frame_img_proximos">
-                            <img src="{{cursos.imgurl}}" class="img_box_proximos">
-                        </div>
-                        <h2 class="about-text center"> <strong>R$ {{cursos.price}} </strong></h2>
-                        <h3 class="about-text center"> {{cursos.description}} </h3>
-                        <h3 class="about-text center"> Início: {{cursos.date}} </h3>
-                        <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
-                            <input type="hidden" name="code" value="{{cursos.pagamento}}" />
-                            <input type="hidden" name="iot" value="button" />
-                            <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-roxo-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+                <div class="slide">
+                    <div class="intro">
+                        <h2>CURSO</h2>
+                        <h1>Revit Architecture 2017 + Projeto de Prefeitura</h1>
+                        <h2><b>Início:</b> 24/06 <b>Fim:</b> 05/08 <b>Carga horária:</b> 24 horas</h2>
+                        <h2><b>Horário:</b> Sábados das 13h as 16h</h2>
+                        <h2><b>Investimento:</b> R$749,90 em até 12x no cartão</h2>
+                        </br>
+                        <h2><b style="color: white">MATRICULE-SE JÁ!</b></h2>
+                        <br>
+                        <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+                        <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" target="_blank">
+                        <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+                        <input type="hidden" name="code" value="17F42C65131357FBB44BFFAB68F3C9D4" />
+                        <input type="hidden" name="iot" value="button" />
+                        <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
                         </form>
                     </div>
                 </div>
-                <h3 class="white about-text" style="width: 80%">Faça o pagamento e envie o comprovante para <a href="mailto:ventronearquitetura@hotmail.com" class="white" style="font-size: 1em"/>ventronearquitetura@hotmail.com</a> e assim que confirmamos o pagamento enviaremos a confirmação da matrícula</h3>
-            </div>
-        </div> -->
-
-        <!-- <div class="question" id="revit">
-            <img src="/images/icons/AskQuestion-100.png" class="box_info_img">
-            <div class="text_question">
-                <p class="revit_does"> O QUE <br> O REVIT <br> FAZ? </P>
-            </div>
-            <img src="/images/icons/AskQuestion-100.png" class="box_info_img">
-        </div> -->
-
-        <!-- <button id="about-revit" class="button-info">Revit</button>
-        <button id="about-sketch" class="button-info">SketchUp</button>
-
-
-
-        <div class="about-cursos">
-            <div class="about-container" class="about-revit">
-                <div class="about_picture">
-                    <img src="./images/revit-screen.png" class="about-img">
-                </div>
-                <div class="about-text">
-                    <h1 class="about-title"> REVIT ARCHITECTURE </h1>
-                    <p class="about-text">O Revit é um software de tecnologia BIM (Building Information Modeling ou Modelagem de Informação da Construção) é uma das novidades mais promissoras dentro do mercado de Arquitetura, Engenharia e Construção. <br> Dentro de um projeto em Revit qualquer alteração nos componentes de projeto gera automaticamente a alteração dos documentos 2D (plantas, cortes, elevações), criando desenhos consistentes e completos.<br> O curso apresenta a interface, os conceitos de tecnologia BIM  e ensina a projetar diretamente no software, em 3D, criando paredes, portas, janelas, estrutura, telhado e demais dados.</p>
+                <div class="slide">
+                    <div class="intro">
+                        <h2>CURSO DE FÉRIAS</h2>
+                        <h1>Revit Architecture 2017 + Projeto de Prefeitura</h1>
+                        <h2><b>Início:</b> 03/07 <b>Fim:</b> 28/07 <b>Carga horária:</b> 24 horas</h2>
+                        <h2><b>Horário:</b> Segundas, quartas e sextas das 19h às 21h</h2>
+                        <h2><b>Investimento:</b> R$749,90 em até 12x no cartão</h2>
+                        </br>
+                        <h2><b style="color: white">MATRICULE-SE JÁ!</b></h2>
+                        <br>
+                        <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+                        <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" target="_blank">
+                        <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+                        <input type="hidden" name="code" value="2719C9CA1616CCEDD49F2FA2C44CF185" />
+                        <input type="hidden" name="iot" value="button" />
+                        <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+                        </form>
+                        <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+                    </div>
                 </div>
             </div>
-            <div class="about-container" class="about-sketch">
-                <div class="about_picture">
-                    <img src="./images/vray-screen.jpg" class="about-img">
+
+
+	        <div class="section" data-anchor="sketchup" style="background-color: #a0cbed; color: #656565">
+                <div class="slide">
+                    <div class="intro">
+                        <h1>Sketchup</h1>
+                        <h2 style="color: #656565">O SketchUp é um programa de criação, visualização e modelagem 3D simples e eficiente. Com ele você passa suas ideias diretamente para um ambiente 3D intuitivo, ágil e flexível. Voltado para profissionais de arquitetura, design e interiores, o SketchUp proporciona uma grande economia de tempo na hora de fazer croquis, estudar a volumetria, fazer perspectivas e apresentações. Neste curso você aprenderá a criar pranchas profissionais e também gerar renders realistas de seus projetos com o V-Ray.</h2>
+                        </br>
+                        <h2 class="matriculas" style="color: #656565;"><b>MATRÍCULAS ABERTAS</b></h2>
+                    </div>
                 </div>
-                <div  class="about-text">
-                    <h1 class="about-title"> SketchUp e V-ray </h1>
-                    <p class="about-text">O SketchUp é usado para criar elementos e cenários 3D com qualidade profissional. O programa permite construir cidades completas de um jeito divertido e interativo. O funcionamento do SketchUp é similar ao dos programas de desenho mais clássicos. A barra superior mostra a todo momento as ferramentas disponíveis para a criação de modelos tridimensionais. Unindo Sketchup com sua gigante biblioteca e o Vray o mais poderoso render de arquitetura, você ao final do curso estará desenvolvendo imagens realistas de seus projetos.</p>
+                <div class="slide">
+                    <div class="intro">
+                        <h2  style="color: #656565">CURSO</h2>
+                        <h1>Sketchup +<br> Vray + Layout</h1>
+                        <h2  style="color: #656565"><b>Início:</b> 24/06 <b>Fim:</b> 05/08 <b>Carga horária:</b> 24 horas</h2>
+                        <h2  style="color: #656565"><b>Horário:</b> Sábados das 9h às 12h</h2>
+                        <h2  style="color: #656565"><b>Investimento:</b> R$749,90 em até 12x no cartão</h2>
+                        </br>
+                        <h2  style="color: #656565"><b>MATRICULE-SE JÁ!</b></h2>
+                        <br>
+                        <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+                        <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" target="_blank">
+                        <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+                        <input type="hidden" name="code" value="5C102BE8616195AEE4896FB5D8EF3651" />
+                        <input type="hidden" name="iot" value="button" />
+                        <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+                        </form>
+                        <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="intro">
+                        <h2  style="color: #656565">CURSO DE FÉRIAS</h2>
+                        <h1>Sketchup +<br> V-ray + Layout</h1>
+                        <h2  style="color: #656565"><b>Início:</b> 04/07 <b>Fim:</b> 27/07 <b>Carga horária:</b> 24 horas</h2>
+                        <h2  style="color: #656565"><b>Horário:</b> Terças e quintas das 19h às 22h</h2>
+                        <h2  style="color: #656565"><b>Investimento:</b> R$749,90 em até 12x no cartão</h2>
+                        </br>
+                        <h2  style="color: #656565"><b>MATRICULE-SE JÁ!</b></h2>
+                        <br>
+                        <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+                        <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" target="_blank">
+                        <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+                        <input type="hidden" name="code" value="8E53AAE12121203CC4EE3F8A874E4F68" />
+                        <input type="hidden" name="iot" value="button" />
+                        <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+                        </form>
+                        <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+                    </div>
                 </div>
             </div>
-        </div>
 
 
-
-
-
-        </div>
-        </br> -->
-
-
-        <!-- <div id="revit_imgs_box">
-        <img src="/images/revit00.jpg" class="revit_img" id="img_modal0">
-        <img src="/images/revit01.jpg" class="revit_img" id="img_modal1">
-        <img src="/images/revit02.jpg" class="revit_img" id="img_modal2">
-        <img src="/images/revit03.jpg" class="revit_img" id="img_modal3">
-    </div> -->
-
-
-
-        <!-- <h1 class="text_section"><span class="text_white"> INSCRIVA-SE, VAGAS LIMITADAS </span></h1>
-
-    <div id="price">
-        <div class="price_total">
-            <h1 class="text_section"><span class="text_selection_reais">R$650,00</span></h1>
-            <p><span class="text_selection_body">O curso pode ser parcelado em até</span></br>
-                <div id="number_high_box"><span class="number_high">12x</span></div></p>
-        </div>
-        <div class="price_total">
-        <p><span class="text_selection_body_down">Nos cartões de crédito através do PagSeguro.</span></p>
-        <p><span class="text_selection_body_down">Caso tenha interesse em outras condições de pagamento, </br>
-        entrar em contato para verificar as outras opções de pagamento</span></p>
-        </div>
-    </div>
-
-    <div class="bars_white"></div> -->
-
-
-        <!-- <div class="subscribe">
-        <div class="subscibe_box">
-            <h1 class="text_section"><span class="text_white"> PASSO A PASSO </span></h1>
-            <div class="intruction_box">
-                <div id="number_high_box_min"><span class="number_high_min">1</span></div>
-                <p class="instruction_text">Para se matricular efetue o pagamento no botão Comprar com PagSeguro. Ao clicar em pagar com PagSeguro, </br>você será redirecionado para o site PagSeguro com total seguranca para o pagamento.</p>
+            <div class="section" data-anchor="autocad" style="background-color: #911c1c; color: white;">
+                <div class="slide">
+                    <div class="intro">
+                        <h1>Autocad</h1>
+                        <h2>Este curso tem o intuito de simplificar a sistemática de elaboração de projetos de prefeitura e desenvolvendo todo o conteúdo no programa AUTOCAD a partir do zero. Destina-se principalmente aos profissionais da área, estudantes, e pessoas que intencionem conhecer mais sobre o assunto. O software mais utilizado no mercado há anos!
+                        </h2>
+                    </br>
+                        <h2 class="matriculas" style="color: white;"><b>MATRÍCULAS ABERTAS</b></h2>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="intro">
+                        <h2>CURSO DE FÉRIAS</h2>
+                        <h1>Autocad + Projeto de Prefeitura</h1>
+                        <h2><b>Início:</b> 03/07 <b>Fim:</b> 28/07 <b>Carga horária:</b> 24 horas</h2>
+                        <h2><b>Horário:</b> Segundas, quartas e sextas das 19h às 21h</h2>
+                        <h2><b>Investimento:</b> R$590,00 em até 12x no cartão</h2>
+                        </br>
+                        <h2><b style="color: white">MATRICULE-SE JÁ!</b></h2>
+                        <br>
+                        <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+                        <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" target="_blank">
+                        <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+                        <input type="hidden" name="code" value="44F15A194545D31114E46FADE2527FA8" />
+                        <input type="hidden" name="iot" value="button" />
+                        <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+                        </form>
+                        <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+                    </div>
+                </div>
             </div>
-            <div class="intruction_box">
-                <div id="number_high_box_min"><span class="number_high_min">2</span></div>
-                <p class="instruction_text">Após efetuado o pagamento, você receberá o comprovante de pagamento do PagSeguro. </br>
-                Após confirmado o pagamento seremos notificados pela PagSeguro sobre o pagamento junto com os dados do aluno.</br>
-                Após identificado o pagamento, você receberá por email o comprovante de incrição no Curso</br>
-                de Revit Architecture + Projeto de Prefeitura.</br></p>
+
+
+	        <div class="section" data-anchor="promob" style="background-color: #303030; color: white;">
+                <div class="slide">
+                    <div class="intro">
+                        <h1>Promob</h1>
+                        <h2>Promob é um software produzido pela empresa brasileira PROCAD, especialista na produção de softwares para ambientes e móveis sob medida. Destina-se a arquitetos, designer de interiores, projetistas de móveis e marceneiros. Agora seus projetos terão muito mais definição e precisão!</h2>
+                    </br>
+                        <h2 class="matriculas" style="color: white;"><b>MATRÍCULAS ABERTAS</b></h2>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="intro">
+                        <h2>CURSO</h2>
+                        <h1>Promob + Projeto de Interiores</h1>
+                        <h2><b>Início:</b> 24/06 <b>Fim:</b> 29/07 <b>Carga horária:</b> 15 horas</h2>
+                        <h2><b>Horário:</b> Sábados das 13h30 às 16h</h2>
+                        <h2><b>Investimento:</b> R$549,00 em até 12x no cartão</h2>
+                        </br>
+                        <h2><b style="color: white">MATRICULE-SE JÁ!</b></h2>
+                        <br>
+                        <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+                        <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" target="_blank">
+                        <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+                        <input type="hidden" name="code" value="D1178E38B2B264E22457FF88804DD13A" />
+                        <input type="hidden" name="iot" value="button" />
+                        <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+                        </form>
+                        <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+                    </div>
+                </div>
             </div>
-        <div>
-            <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
 
-                <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
-        <!-- <input type="hidden" name="code" value="706C955BFCFC58ECC48B6FB23D045822" />
-                <input type="hidden" name="iot" value="button" />
-                <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-roxo-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
-            </form>
-        </div>
-    </div> -->
 
-        <!-- </div> -->
 
+            <div class="section" data-anchor="photoshop" style="background-color: #232f63; color: white;">
+                <div class="intro">
+                    <h1>Photoshop</h1>
+                    <h2>Com o intuito de capacitar o profissional da área de arquitetura, urbanismo e decoração a manusear o principal software de manipulação de imagens e suas ferramentas para a realização de fotomontagens, texturas, ajustes de luz, sombra, cor entre outros. A realidade e qualidade que você precisa! </h2>
+                    </br>
+                    <h2 class="matriculas" style="color: white;"><b>NOVAS TURMAS EM BREVE</b></h2>
+                </div>
+            </div>
+            <div class="section" data-anchor="corel" style="background-color: #47a134; color: white;">
+                <div class="intro">
+                    <h1>Corel Draw</h1>
+                    <h2>Capacitar para humanização de planta baixa para o ramo de arquitetura, utilizando arquivos de imagens ou arquivos do AutoCAD
+Mostrar na prática a utilização das ferramentas do CorelDRAW X7 para humanização de plantas. Dê vida a seus projetos!</h2>
+</br>
+
+                    <h2 class="matriculas" style="color: white;"><b>NOVAS TURMAS EM BREVE</b></h2>
+                </div>
+            </div>
+
+
+            <div class="section" data-anchor="contato" style="background-color: black; color: white; text-align: center">
+                <div class="intro">
+                    <h1>Contato</h1>
+                <h2 style="color: white; margin: 0px; width: 100%">Telefone: (14) 99710-1193 / (14) 3301-0111</br>
+                    E-mail: <a href="mailto:ventronearquitetura@hotmail.com" style="color: white;">ventronearquitetura@hotmail.com</a></br>
+                    Endereço: Av. República, 468. Marília-SP</h2>
+                </div>
+                <div id="map"></div>
+
+                <div id="signature">
+                    <p> <a href="http://github.com/guilhermedelucas" class="icon_footer">Designed and coded by Guilherme Gomes de Lucas</a></p>
+                </div>
+            </div>
 
 
 </body>
